@@ -1,0 +1,40 @@
+.main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.contaier{
+    border: 1px solid rgb(204, 88, 88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 10px;
+    background-color: aquamarine;
+    box-shadow: 5px 5px 5px 5px rgb(74, 35, 35);
+}
+input{
+    border: none;
+    width: 120px;
+    height: 20px;
+    background-color: rgb(250, 244, 244);
+    color: rgb(27, 2, 2);
+}
+.input{
+    display: flex;
+    gap: 10px;   
+}
+.result{
+    padding: 10px;
+
+}
+.div_button{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.button{
+    padding: 5px;
+
+}
