@@ -1,41 +1,42 @@
 import { useState } from "react";
 import "./calculator.css"
+const stateInIt={
+  value1 :"",
+  value2 :"",
+  operation:"result",
+  result:null,
+};
 function Calculator() {
-  const [state, setState] = useState();
-  const [value1, setvalue1] = useState();
-  const [value2, setvalue2] = useState();
-  const [operation, setOperation] = useState("result:");
+  const [state, setState] = useState(stateInIt);
+  
 
   function calc1() {
-    const res = value1 + value2;
-    setOperation("addition:");
-    setState(res);
+    const res = state.value1 + state.value2;
+    setState({...state,result:res,operation:"add"});
   }
 
   function calc2() {
-    const res = value1 - value2;
-    setOperation("subtraction:");
-    setState(res);
+    const res = state.value1 - state.value2;  
+    setState({...state,result:res,operation:"subtract"});
   }
   function calc3() {
-    const res = value1 * value2;
-    setOperation("multiplication:");
-    setState(res);
+    const res = state.value1 * state.value2;
+    setState({...state,result:res,operation:"multiply"});
   }
   function calc4() {
-    const res = value1 / value2;
-    setOperation("division:");
-    setState(res);
+    const res = state.value1 / state.value2;
+    setState({...state,result:res,operation:"divide"});
   }
-  function typing1(e) {
+  function typing1(e) { 
     const intVal = parseInt(e.target.value);
-    setvalue1(intVal);
+    setState({...state,value1:intVal});
   }
   function typing2(e) {
     const intVal = parseInt(e.target.value);
 
-    setvalue2(intVal);
+    setState({...state,value2:intVal});
   }
+
   return (<div className="main_container">
     <div className="contaier">
       <div className="calculator">
@@ -44,8 +45,7 @@ function Calculator() {
       <input type="number" onChange={typing2} />
       </div>
       <div className="result">
-        {operation}
-        {state}
+        {state.operation}:{state.result}
       </div>
       <div className="div_button">
         <button onClick={calc1} className="button">Add</button>
